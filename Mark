@@ -1,0 +1,29 @@
+using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
+
+public class Sandy : MonoBehaviour
+{
+
+    float xAxis;
+    float zAxis;
+    float speed;
+
+    // Start is called before the first frame update
+    void Start()
+    {
+
+        speed = 5;
+
+    }
+
+    // Update is called once per frame
+    void Update()
+    {
+
+        xAxis = Input.GetAxis("Horizontal");
+        zAxis = Input.GetAxis("Vertical");
+        transform.Translate(xAxis * speed * Time.deltaTime, 0, zAxis * speed * Time.deltaTime);
+
+    }
+}
